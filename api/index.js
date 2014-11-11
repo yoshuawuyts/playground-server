@@ -12,6 +12,7 @@ var helmet = require('koa-helmet');
 var parse = require('co-body');
 var koa = require('koa');
 
+var actions = require('../actions/index');
 var users = require('./users/index');
 var home = require('./home/index');
 
@@ -42,11 +43,15 @@ app.use(responseTime());
  */
 
 app.use(trieRouter(app));
+
 home(app);
 users(app);
-app.use(function* routes(next) {
 
-});
+/**
+ * Register actions.
+ */
+
+actions(app);
 
 /**
  * Start listening.
@@ -54,8 +59,8 @@ app.use(function* routes(next) {
 
 if (!module.parent) {
   console.log('');
-  console.log('  Port: ' + port);
-  console.log('  Env:  ' + env);
+  console.log('  Port ' + port);
+  console.log('  Env  ' + env);
   console.log('');
   app.listen(port);
 }

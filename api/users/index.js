@@ -15,7 +15,7 @@ function routes(router) {
   var users = router.route('/users');
 
   users.get(function* (next) {
-    this.body = 'hello world';
+    this.body = 'hello users';
   });
 
   users.post(function* (next) {
