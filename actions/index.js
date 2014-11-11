@@ -2,18 +2,21 @@
  * Module dependencies.
  */
 
-/**
- * Expose `dispatcher()`.
- */
-
-module.exports = dispatcher;
+var dispatcher = require('simple-dispatcher');
 
 /**
- * Dispatcher.
+ * Expose `eventMap()`.
  */
 
-function dispatcher(ctx) {
-  ctx.on('home', function() {
-    console.log('home was emitted');
-  });
+module.exports = eventMap;
+
+/**
+ * Map event listeners onto the context.
+ *
+ * @api {EventEmitter} ctx
+ * @api public
+ */
+
+function eventMap(ctx) {
+  dispatcher(ctx, {});
 }

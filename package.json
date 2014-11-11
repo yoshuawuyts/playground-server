@@ -18,7 +18,8 @@
     "koa-logger": "^1.2.2",
     "koa-response-time": "^1.0.2",
     "koa-session": "^2.0.0",
-    "koa-trie-router": "^1.0.10"
+    "koa-trie-router": "^1.0.10",
+    "simple-dispatcher": "^1.0.3"
   },
   "devDependencies": {
     "istanbul": "^0.3.2",
