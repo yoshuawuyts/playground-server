@@ -1,7 +1,3 @@
-include node_modules/make-lint/index.mk
-
-LINT_CONFIG = .eslintrc
-
 all: start
 
 start:
